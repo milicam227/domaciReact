@@ -121,13 +121,24 @@ a {
   border-bottom-left-radius: 10px;
 }
 
-.like{
-  width: 30px;
-  height: 30px;
-}
 
 .heart{
   width: 30px;
   height: 30px;
-  padding-left: 10px;
+  padding-left: 30px;
+  float:left;
+  margin-top: 26px;
+}
+
+.likesNum{
+  float: left;
+  font-size: x-large;
+  padding-left: 30px;
+}
+
+.like{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: 26px;
 }
