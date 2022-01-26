@@ -84,17 +84,6 @@
   background-color: rgb(250, 203, 227);
 }
 
-.btn {
-  background-color: cornflowerblue;
-  color: white;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 3px;
-  border-radius: 3px;
-  border-width: 0px;
-}
 
 a {
   color: black;
@@ -125,20 +114,24 @@ a {
 .heart{
   width: 30px;
   height: 30px;
+  float: left;
+  margin-top: 17px;
+  border-style: hidden;
+  background-color: transparent;
   padding-left: 30px;
-  float:left;
-  margin-top: 26px;
 }
 
 .likesNum{
   float: left;
-  font-size: x-large;
-  padding-left: 30px;
+  font-size: large;
+  padding-left: 10px;
 }
 
 .like{
   width: 30px;
   height: 30px;
   float: left;
-  margin-top: 26px;
+  margin-top: 17px;
+  border-style: hidden;
+  background-color: transparent;
 }

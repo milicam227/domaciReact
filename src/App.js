@@ -3,6 +3,8 @@ import './App.css';
 import NavigationBar from './components/NavigationBar';
 import Recipes from './components/Recipes';
 import {useState} from 'react';
+import Favourites from './components/Favourites';
+import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
 
 function App() {
 
@@ -40,10 +42,13 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <BrowserRouter className="App">
       <NavigationBar></NavigationBar>
-      <Recipes recipes={recipes}/>
-    </div>
+      <Routes>
+        <Route path="/" element={<Recipes recipes={recipes}/>}/>
+        <Route path="/favourites*" element={<Favourites recipes={recipes}/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

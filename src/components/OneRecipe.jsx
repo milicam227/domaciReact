@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import {AiOutlineLike} from "react-icons/ai"
 import {AiOutlineHeart} from "react-icons/ai"
 
-function OneRecipe(props) {
- /*   let likes=0;*/
+function OneRecipe({recipe, inFav}) {
 
     const [likeNum, setLikeNum] = useState(0);
 
@@ -16,17 +15,24 @@ function OneRecipe(props) {
   <div className="card"> 
     <img className="card-img" src="https:/picsum.photos/200" alt="Photo"/>
     <div className="card-body">
-        <h3 className="card-title">{props.recipe.title}</h3>
-        <p className="card-text">{props.recipe.description}</p>
+        <h3 className="card-title">{recipe.title}</h3>
+        <p className="card-text">{recipe.description}</p>
     </div> 
 
 
+    {inFav === 1 ?(
+    <div>
+        <button className="like" onClick={addLike}>
+            <AiOutlineLike/>
+        </button>
+        <p className='likesNum'>{likeNum}</p>
+        <button className="heart" >
+            <AiOutlineHeart/>
+        </button>
+    </div>):
+    (<></>)}
 
-    <button className="like" onClick={addLike}>
-        <AiOutlineLike/>
-    </button>
-    <p className='likesNum'>{likeNum}</p>
-    <AiOutlineHeart className='heart'/>
+    
 
 
   </div>);
