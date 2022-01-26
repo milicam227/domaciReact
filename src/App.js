@@ -41,12 +41,17 @@ function App() {
     },
   ];
 
+  function onFav(){
+    console.log("App")
+  }
+
   return (
     <BrowserRouter className="App">
       <NavigationBar></NavigationBar>
+     
       <Routes>
-        <Route path="/" element={<Recipes recipes={recipes}/>}/>
-        <Route path="/favourites*" element={<Favourites recipes={recipes}/>}/>
+        <Route path="/" element={<Recipes recipes={recipes} onFav={onFav}/>}/>
+        <Route path="/favourites" element={<Favourites recipes={recipes}/>}/>
       </Routes>
     </BrowserRouter>
   );

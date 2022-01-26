@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {AiOutlineLike} from "react-icons/ai"
 import {AiOutlineHeart} from "react-icons/ai"
 
-function OneRecipe({recipe, inFav}) {
+function OneRecipe({recipe, addFav, inFav }) {
 
     const [likeNum, setLikeNum] = useState(0);
 
@@ -10,7 +10,10 @@ function OneRecipe({recipe, inFav}) {
     function addLike(){
         console.log("Dodat like" +likeNum);
         setLikeNum(likeNum+1);
+        
     }
+
+    
   return (
   <div className="card"> 
     <img className="card-img" src="https:/picsum.photos/200" alt="Photo"/>
@@ -26,7 +29,7 @@ function OneRecipe({recipe, inFav}) {
             <AiOutlineLike/>
         </button>
         <p className='likesNum'>{likeNum}</p>
-        <button className="heart" >
+        <button className="heart"  onClick={addFav}>
             <AiOutlineHeart/>
         </button>
     </div>):
