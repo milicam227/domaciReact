@@ -8,7 +8,9 @@ import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
 
 function App() {
 
-  const recipes = [
+
+  const[favRecipes,setFavRecipes] =useState([]);
+  const[recipes,setRecipes] =useState  ([
     {
       id: 1,
       title: "Triple Chocolate Chunk Cookies",
@@ -39,10 +41,21 @@ function App() {
 
 
     },
-  ];
+  ]);
 
-  function onFav(){
+  function refreshFav(){
+    let newRecipes=recipes.filter((rec)=>rec.amount>0);
+    setFavRecipes(newRecipes);
+  }
+  function onFav(title, id){
     console.log("App")
+    recipes.forEach(rec=>{
+      if(rec.id===id){
+        rec.amount++;
+      }
+    });
+refreshFav();
+
   }
 
   return (
@@ -50,8 +63,8 @@ function App() {
       <NavigationBar></NavigationBar>
      
       <Routes>
-        <Route path="/" element={<Recipes recipes={recipes} onFav={onFav}/>}/>
-        <Route path="/favourites" element={<Favourites recipes={recipes}/>}/>
+        <Route path="/" element={<Recipes recipes={recipes} addFav={onFav}/>}/>
+        <Route path="/favourites" element={<Favourites recipes={favRecipes}/>}/>
       </Routes>
     </BrowserRouter>
   );

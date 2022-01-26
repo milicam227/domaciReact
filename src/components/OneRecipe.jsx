@@ -29,7 +29,7 @@ function OneRecipe({recipe, addFav, inFav }) {
             <AiOutlineLike/>
         </button>
         <p className='likesNum'>{likeNum}</p>
-        <button className="heart"  onClick={addFav}>
+        <button className="heart"  onClick={()=>addFav(recipe.title,recipe.id)}>
             <AiOutlineHeart/>
         </button>
     </div>):
