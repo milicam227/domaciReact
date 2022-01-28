@@ -15,7 +15,7 @@ function OneRecipe({recipe, addFav, inFav }) {
 
     
   return (
-  <div className="card"> 
+  <div className={inFav===1 ? "card" : "favCard"}> 
     <img className="card-img" src="https:/picsum.photos/200" alt="Photo"/>
     <div className="card-body">
         <h3 className="card-title">{recipe.title}</h3>
